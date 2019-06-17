@@ -3,13 +3,16 @@ package com.uca.capas.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "usuario")
 public class Usuario {
 	@Column(name = "usuario")
 	@Id
+	@NotNull(message="Credenciales invalidas")
 	String usuario;
 	@Column(name = "clave")
+	@NotNull(message="Credenciales invalidas")
 	String clave;
 	
 	

@@ -31,6 +31,7 @@ public class usuarioController {
 			mav.addObject("sucursales",sucursal);
 			mav.setViewName("usuarioAdmin");
 		}else {
+			mav.addObject("message","Credenciales invalidas");
 			mav.setViewName("main");
 		}
 		return mav;

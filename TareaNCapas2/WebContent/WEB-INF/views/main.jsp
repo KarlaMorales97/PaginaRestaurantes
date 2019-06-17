@@ -25,6 +25,7 @@
 					<br><br>
 					<input type="submit"  class="btn btn-info btn-lg" value="Ingresar"><br><br>
 				</form:form>
+				<h1 class="bg-danger text-white">${message}</h1>
 			</div>	
 		</div>
 	</div>
