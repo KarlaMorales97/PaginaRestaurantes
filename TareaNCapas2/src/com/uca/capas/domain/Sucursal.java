@@ -12,6 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity(name = "sucursal")
 public class Sucursal {
@@ -22,21 +25,27 @@ public class Sucursal {
 	@SequenceGenerator(name = "sucursal_codigo_seq" , sequenceName = "public.sucursal_codigo_seq", allocationSize = 1)
 	Integer codigo;
 	
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "nombre")
 	String nombre;
 
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "ubicacion")
 	String ubicacion;
 	
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "horario_apertura")
 	String horarioApertura;
 	
+	@NotNull(message="Este campo no puede estar vacio")
 	@Column(name = "nmesas")
 	Integer nMesas;
 	
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "nomgerente")
 	String nomGerente;
 
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "horario_cierre")
 	String horarioCierre;
 	

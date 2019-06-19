@@ -20,4 +20,16 @@ public class SucursalServiceImpl implements SucursalService{
 		return sRepo.findAll();
     	 
      }
+
+	@Override
+	public Sucursal save(Sucursal sucursal) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return sRepo.save(sucursal);
+	}
+
+	@Override
+	public com.uca.capas.domain.Sucursal Sucursal(Integer id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

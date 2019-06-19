@@ -9,6 +9,6 @@ import com.uca.capas.domain.Sucursal;
 
 public interface SucursalRepository extends JpaRepository<Sucursal, Integer>{
 	
-
+//	public Sucursal findByIdSucursal(Integer id) throws DataAccessException;
 
 }

@@ -37,6 +37,16 @@ public class usuarioController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/regresarAdministrador")
+	public ModelAndView initMain(){
+		ModelAndView mav = new ModelAndView();
+			List<Sucursal> sucursal = null;
+			sucursal = sucursalService.findAll();
+			mav.addObject("sucursales",sucursal);
+			mav.setViewName("usuarioAdmin");
+		   return mav;
+	}
+	
 	
 	
 }
