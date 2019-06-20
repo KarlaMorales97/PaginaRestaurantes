@@ -2,6 +2,7 @@ package com.uca.capas.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,7 +24,7 @@ public class Sucursal {
 	@Id
 	@GeneratedValue(generator = "sucursal_codigo_seq", strategy = GenerationType.AUTO)
 	@SequenceGenerator(name = "sucursal_codigo_seq" , sequenceName = "public.sucursal_codigo_seq", allocationSize = 1)
-	Integer codigo;
+	Integer codigoSucursal;
 	
 	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "nombre")
@@ -49,15 +50,15 @@ public class Sucursal {
 	@Column(name = "horario_cierre")
 	String horarioCierre;
 	
-	@OneToMany(mappedBy = "sucursal", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sucursal", fetch = FetchType.EAGER)
 	List<Empleado> empleados;
 
-	public Integer getCodigo() {
-		return codigo;
+	public Integer getCodigoSucursal() {
+		return codigoSucursal;
 	}
 
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
+	public void setCodigoSucursal(Integer codigoSucursal) {
+		this.codigoSucursal = codigoSucursal;
 	}
 
 	public String getNombre() {
@@ -116,5 +117,5 @@ public class Sucursal {
 		this.empleados = empleados;
 	}
 	
-	
+
 }

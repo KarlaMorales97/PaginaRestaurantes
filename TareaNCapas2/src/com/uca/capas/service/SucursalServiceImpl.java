@@ -32,4 +32,9 @@ public class SucursalServiceImpl implements SucursalService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void delete(Integer idSucursal) throws DataAccessException {
+		sRepo.deleteById(idSucursal);
+	}
 }

@@ -12,11 +12,16 @@
 
 	<br>
 	&nbsp&nbsp&nbsp&nbsp<input type="button" class="btn btn-info btn-lg" value="SALIR" onclick="location.href='${pageContext.request.contextPath}/'"/>
-	<h1 class="text-center text-white">BIENVENIDO USUARIO ADMINISTRADOR</h1><br><br>
+	<h1 class="text-center text-white">BIENVENIDO USUARIO ADMINISTRADOR</h1>
+	
+	<h1 class="p-3 mb-2 bg-dark text-white">${messageDelete}</h1>
+	
+	<input type="button" class="btn btn-outline-light btn-lg btn-space" value="Registrar sucursal" onclick="location.href='${pageContext.request.contextPath}/registrarSucursal'">
+	
+	<br><br>
 	<table class="table table-dark">
 		<tr>
 			<th>Nombre sucursal</th>
-			<th>Registrar sucursal</th>
 			<th>Ver perfil</th>
 			<th>Editar</th>
 			<th>Eliminar</th>
@@ -25,11 +30,10 @@
 			<c:forEach items="${sucursales}" var="sucursal">
 				<tr>				
 					<td>${sucursal.nombre}</td>
-					
-						<td><input type="button" class="btn btn-outline-light" value="Registrar sucursal" onclick="location.href='${pageContext.request.contextPath}/registrarSucursal'"></td>
-					    <td><input type="button" class="btn btn-outline-light" value="Ver perfil sucursal"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Ver perfil sucursal"></td>
 						<td><input type="button" class="btn btn-outline-light" value="Editar sucursal"></td>
-						<td><input type="button" class="btn btn-outline-light" value="Eliminar sucursal"></td>
+						<td><input type="button" class="btn btn-outline-light" value="Eliminar sucursal"
+						onclick="location.href='${pageContext.request.contextPath}/deleteSucursal?codigoSucursal=${sucursal.codigoSucursal}'"></td>
 				</tr>	
 			</c:forEach>
 	</table>
