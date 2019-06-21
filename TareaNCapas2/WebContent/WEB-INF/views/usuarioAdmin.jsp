@@ -30,10 +30,11 @@
 			<c:forEach items="${sucursales}" var="sucursal">
 				<tr>				
 					<td>${sucursal.nombre}</td>
-					<td><input type="button" class="btn btn-outline-light" value="Ver perfil sucursal"></td>
-						<td><input type="button" class="btn btn-outline-light" value="Editar sucursal"></td>
-						<td><input type="button" class="btn btn-outline-light" value="Eliminar sucursal"
-						onclick="location.href='${pageContext.request.contextPath}/deleteSucursal?codigoSucursal=${sucursal.codigoSucursal}'"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Ver perfil sucursal"
+					onclick="location.href='${pageContext.request.contextPath}/verPerfil?codigoSucursal=${sucursal.codigoSucursal}'"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Editar sucursal"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Eliminar sucursal"
+					onclick="location.href='${pageContext.request.contextPath}/deleteSucursal?codigoSucursal=${sucursal.codigoSucursal}'"></td>
 				</tr>	
 			</c:forEach>
 	</table>

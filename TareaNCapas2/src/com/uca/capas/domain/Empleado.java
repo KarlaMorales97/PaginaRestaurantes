@@ -87,6 +87,16 @@ public class Empleado {
 	}
 	
 	
-	
+	//METODO DELEGATE
+	public String getEstadoDelegate() {
+		if(this.estado == null) {
+			return "";
+		}
+		else {
+			if(this.estado) return "ACTIVO";
+			else return "INACTIVO";
+		}
+		
+	}
 	
 }

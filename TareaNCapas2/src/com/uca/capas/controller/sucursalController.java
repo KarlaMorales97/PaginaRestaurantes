@@ -57,5 +57,15 @@ public class sucursalController {
 		mav.setViewName("usuarioAdmin");
 		return mav;
 	}
+	
+
+	@RequestMapping(value="/verPerfil")
+	public ModelAndView verPerfil(@RequestParam("codigoSucursal") Integer codigo){
+		ModelAndView mav = new ModelAndView();
+		Sucursal perfilSucursal = sSucur.findById(codigo);
+		mav.addObject("sucursalEncontrada",perfilSucursal);
+		mav.setViewName("verPerfil");
+		return mav;
+	}
 }
 

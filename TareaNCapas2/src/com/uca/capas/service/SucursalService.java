@@ -15,5 +15,7 @@ public interface SucursalService {
 	public Sucursal Sucursal(Integer id) throws DataAccessException;
 	
 	public void delete(Integer sucursal) throws DataAccessException;
+	
+	public Sucursal findById(Integer idSucursal) throws DataAccessException;
 
 }
