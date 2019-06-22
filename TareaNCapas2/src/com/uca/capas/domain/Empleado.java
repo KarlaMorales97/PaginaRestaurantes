@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "empleado")
 public class Empleado {
@@ -22,9 +24,11 @@ public class Empleado {
 	@SequenceGenerator(name = "sucursal_codigo_seq" , sequenceName = "public.sucursal_codigo_seq", allocationSize = 1)
 	Integer codigoEmpleado;
 	
+	@NotEmpty(message="Este campo no puede estar vacio")
 	@Column(name = "nombre")
 	String nombre;
 	
+	@NotNull(message="Este campo no puede estar vacio")
 	@Column(name = "edad")
 	Integer edad;
 	
@@ -35,7 +39,7 @@ public class Empleado {
 	Boolean estado;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="sucursal", insertable = false, updatable = false)
+	@JoinColumn(name="sucursal")
 	private Sucursal sucursal;
 
 	public Integer getCodigoEmpleado() {

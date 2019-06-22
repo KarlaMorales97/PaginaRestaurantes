@@ -30,18 +30,21 @@
 			</div>
 			<div class="d-flex justify-content-center bg-gradient-success" style="padding:1em">
 				<h3 class="text-center text-white">Nombre del gerente:&nbsp&nbsp</h3><h2 class="text-center text-white"><b>${sucursalEncontrada.nomGerente}</b></h2><br>
+
 			</div>
 		</div>
 	</div>
-	<br><br><h2 class="text-center text-secondary"><b>Lista de empleados</b></h2></div><br>
+	<br><br><h2 class="text-center text-secondary"><b>Lista de empleados</b></h2></div>
+	<input type="button" style="width:70%" class="btn btn-outline-light btn-lg btn-space d-flex container justify-content-center" value="Registrar empleado" onclick="location.href='${pageContext.request.contextPath}/registrarEmpleado?codigoSucursal=${sucursalEncontrada.codigoSucursal}'"><br>
 	
-	<table class="table table-hover table-dark d-flex container justify-content-center" style="width:50%">
+	<table class="table table-dark d-flex container justify-content-center" style="width:70%">
 		<tr>
 			<th>Nombre empleado</th>
 			<th>Edad empleado</th>
 			<th>Genero empleado</th>
 			<th>Estado</th>
 			<th>Editar empleado</th>
+			<th>Eliminar empleado</th>
 		</tr>
 		
 			<c:forEach items="${sucursalEncontrada.empleados}" var="empleado">
@@ -50,8 +53,10 @@
 					<td class="text-center">${empleado.edad}</td>
 					<td class="text-center">${empleado.genero}</td>
 					<td class="text-center">${empleado.estadoDelegate}</td>
-					<td><input type="button" class="btn btn-outline-light" value="Eliminar sucursal"
-					onclick="location.href='${pageContext.request.contextPath}/deleteSucursal?codigoSucursal=${sucursal.codigoSucursal}'"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Editar empleado"
+					onclick="location.href='${pageContext.request.contextPath}/editarEmpleado?codigoEmpleado=${empleado.codigoEmpleado}'"></td>
+					<td><input type="button" class="btn btn-outline-light" value="Eliminar empleado"
+					onclick="location.href='${pageContext.request.contextPath}/eliminarEmpleado?codigoEmpleado=${empleado.codigoEmpleado}'"></td>
 				</tr>	
 			</c:forEach>
 		</table>	

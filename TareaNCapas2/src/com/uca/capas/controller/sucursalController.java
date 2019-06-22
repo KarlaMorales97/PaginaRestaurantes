@@ -30,6 +30,7 @@ public class sucursalController {
 		mav.setViewName("insertarSucursal");
 		return mav;
 	}
+
 	
 	@RequestMapping(value="/insertarData",method=RequestMethod.POST)
 	public ModelAndView initMain(@Valid @ModelAttribute Sucursal sucursal,BindingResult result){
@@ -62,7 +63,7 @@ public class sucursalController {
 	@RequestMapping(value="/verPerfil")
 	public ModelAndView verPerfil(@RequestParam("codigoSucursal") Integer codigo){
 		ModelAndView mav = new ModelAndView();
-		Sucursal perfilSucursal = sSucur.findById(codigo);
+		Sucursal perfilSucursal = sSucur.findOne(codigo);
 		mav.addObject("sucursalEncontrada",perfilSucursal);
 		mav.setViewName("verPerfil");
 		return mav;
