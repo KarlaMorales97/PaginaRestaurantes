@@ -54,7 +54,7 @@
 					<td class="text-center">${empleado.genero}</td>
 					<td class="text-center">${empleado.estadoDelegate}</td>
 					<td><input type="button" class="btn btn-outline-light" value="Editar empleado"
-					onclick="location.href='${pageContext.request.contextPath}/editarEmpleado?codigoEmpleado=${empleado.codigoEmpleado}'"></td>
+					onclick="location.href='${pageContext.request.contextPath}/editarEmpleado?codigoEmpleado=${empleado.codigoEmpleado}&codigoSucursal=${sucursalEncontrada.codigoSucursal}'"></td>
 					<td><input type="button" class="btn btn-outline-light" value="Eliminar empleado"
 					onclick="location.href='${pageContext.request.contextPath}/eliminarEmpleado?codigoEmpleado=${empleado.codigoEmpleado}'"></td>
 				</tr>	

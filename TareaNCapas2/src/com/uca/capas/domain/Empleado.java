@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -28,6 +30,8 @@ public class Empleado {
 	@Column(name = "nombre")
 	String nombre;
 	
+	@Min(value = 18, message="No debe ser menor a 18 años")
+	@Max(value = 65, message="No debe ser mayor a 65 años")
 	@NotNull(message="Este campo no puede estar vacio")
 	@Column(name = "edad")
 	Integer edad;

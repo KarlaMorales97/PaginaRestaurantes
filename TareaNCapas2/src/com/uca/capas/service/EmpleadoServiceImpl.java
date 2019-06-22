@@ -27,6 +27,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 	public List<Empleado> findAll() throws DataAccessException {
 		// TODO Auto-generated method stub
 		return eRepo.findAll();
+		
 	}
 
 	@Override

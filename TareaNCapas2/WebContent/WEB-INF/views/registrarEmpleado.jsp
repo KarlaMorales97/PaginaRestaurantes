@@ -13,13 +13,13 @@
 
 	<br>
 	&nbsp&nbsp&nbsp&nbsp<input type="button" class="btn btn-info btn-lg" value="REGRESAR" onclick="location.href='${pageContext.request.contextPath}/regresarAdministrador'"/>
-	<h1 class="text-center text-white">ACTUALIZAR EMPLEADO</h1>
+	<h1 class="text-center text-white">INGRESAR NUEVO EMPLEADO</h1>
 	
 
 	<div class="container p-5 ">
 		<div class="d-flex justify-content-center h-100 p-3 mb-2 bg-gradient-secondary text-white">
-		
-			<form:form action="${pageContext.request.contextPath}/updateDataEmpleado?codigoEmpleado=${empleado.codigoEmpleado}&codigoSucursal=${sucursalEncontrada.codigoSucursal}" method="POST" modelAttribute="empleado">
+			<form:form action="${pageContext.request.contextPath}/insertarDataEmpleado?codigoSucursal=${sucursalEncontrada.codigoSucursal}" method="POST" modelAttribute="empleado">
+			
 			    <br>
 			    <h4><label>Nombre de empleado:&nbsp&nbsp</label>
 				<form:input  class="redondeadonorelieve col-sm-6" type="text;hidden" name="snombre" path="nombre"/></h4>
@@ -37,7 +37,7 @@
 				<label style="padding:1em"><form:radiobutton name="estado" path="estado" value="true"/>&nbspActivo</label>
 				<label style="padding:1em"><form:radiobutton  name="estado" path="estado" value="false"/>&nbspInactivo</label></h4>
 				
-				<input type="submit" class="btn btn-dark btn-lg" value="Actualizar empleado">
+				<input type="submit" class="btn btn-dark btn-lg" value="Agregar nuevo empleado">
 			</form:form>
 		</div>	
 		<h1 class="p-3 mb-2 bg-dark text-white">${message3}</h1>
