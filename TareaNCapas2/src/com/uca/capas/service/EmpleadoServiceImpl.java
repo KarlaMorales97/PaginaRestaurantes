@@ -35,6 +35,12 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 		// TODO Auto-generated method stub
 		return eRepo.findById(idEmpleado).get();
 	}
+
+	@Override
+	public void delete(Integer empleado) throws DataAccessException {
+		eRepo.deleteById(empleado);
+		
+	}
 	
 	
 

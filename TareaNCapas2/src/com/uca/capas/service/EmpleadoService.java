@@ -15,4 +15,5 @@ public interface EmpleadoService {
 	
 	public List<Empleado> findAll() throws DataAccessException;
 
+	public void delete(Integer empleado) throws DataAccessException;
 }

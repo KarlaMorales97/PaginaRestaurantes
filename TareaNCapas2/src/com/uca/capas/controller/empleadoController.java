@@ -50,6 +50,16 @@ public class empleadoController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/eliminarEmpleado")
+	public ModelAndView eliminar(@RequestParam("codigoEmpleado") Integer codigo,@RequestParam("codigoSucursal") Integer codigoSucursal){
+		ModelAndView mav = new ModelAndView();
+		eServ.delete(codigo);;
+		Sucursal sucursal = sSucur.findOne(codigoSucursal);
+		mav.addObject("sucursalEncontrada",sucursal);
+		mav.setViewName("verPerfil");
+		return mav;
+	}
+	
 	@RequestMapping(value="/insertarDataEmpleado",method=RequestMethod.POST)
 	public ModelAndView initMain(@Valid @ModelAttribute Empleado empleado,BindingResult result,  @RequestParam("codigoSucursal") Integer codigo){
 			ModelAndView mav = new ModelAndView();
