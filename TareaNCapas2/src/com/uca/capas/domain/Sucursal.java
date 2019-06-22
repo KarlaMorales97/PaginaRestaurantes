@@ -77,13 +77,7 @@ public class Sucursal {
 		this.ubicacion = ubicacion;
 	}
 
-	public String getHorarioApertura() {
-		return horarioApertura;
-	}
-
-	public void setHorarioApertura(String horarioApertura) {
-		this.horarioApertura = horarioApertura;
-	}
+	
 
 	public Integer getnMesas() {
 		return nMesas;
@@ -99,6 +93,14 @@ public class Sucursal {
 
 	public void setNomGerente(String nomGerente) {
 		this.nomGerente = nomGerente;
+	}
+
+	public String getHorarioApertura() {
+		return horarioApertura;
+	}
+
+	public void setHorarioApertura(String horarioApertura) {
+		this.horarioApertura = horarioApertura;
 	}
 
 	public String getHorarioCierre() {

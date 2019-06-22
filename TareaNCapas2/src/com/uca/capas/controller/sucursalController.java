@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.uca.capas.domain.Empleado;
 import com.uca.capas.domain.Sucursal;
 import com.uca.capas.service.SucursalService;
 
@@ -28,6 +29,15 @@ public class sucursalController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("sucursal",new Sucursal());
 		mav.setViewName("insertarSucursal");
+		return mav;
+	}
+	
+	@RequestMapping(value="/updateSucursal")
+	public ModelAndView update(@RequestParam("codigoSucursal") Integer codigoSucursal){
+		ModelAndView mav = new ModelAndView();
+		Sucursal sucursal = sSucur.findOne(codigoSucursal);
+		mav.addObject("sucursal",sucursal);
+		mav.setViewName("editarSucursal");
 		return mav;
 	}
 
@@ -67,6 +77,25 @@ public class sucursalController {
 		mav.addObject("sucursalEncontrada",perfilSucursal);
 		mav.setViewName("verPerfil");
 		return mav;
+	}
+	
+	@RequestMapping(value="/updateDataSucursal",method=RequestMethod.POST)
+	public ModelAndView update(@Valid @ModelAttribute Sucursal sucursal, BindingResult result , @RequestParam("codigoSucursal") Integer codigo){
+			ModelAndView mav = new ModelAndView();
+			if(result.hasErrors()) {
+				//mav.addObject("message3","Errores al enviar formulario");
+				Sucursal sucursalE = sSucur.findOne(codigo);
+				mav.addObject("sucursal",sucursal);
+				mav.setViewName("editarSucursal");
+			}
+			else {
+				sSucur.findOne(codigo);
+				sSucur.save(sucursal);
+				List<Sucursal> sucursales = sSucur.findAll();
+				mav.addObject("sucursales",sucursales);
+				mav.setViewName("usuarioAdmin");
+			}
+			return mav;
 	}
 }
 
