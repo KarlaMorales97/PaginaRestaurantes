@@ -1,3 +1,3 @@
 # TareaNCapas2
-Correo de usuario: admin@gmail.com
+Correo de usuario de pagina de restaurante: admin@gmail.com
 Password de usuario: root
