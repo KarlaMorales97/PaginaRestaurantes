@@ -88,6 +88,9 @@ public class empleadoController {
 			ModelAndView mav = new ModelAndView();
 			if(result.hasErrors()) {
 				//mav.addObject("message3","Errores al enviar formulario");
+				Sucursal sucursal = sSucur.findOne(codigo);
+				empleado.setSucursal(sucursal);
+				mav.addObject("sucursalEncontrada",sucursal);
 				mav.setViewName("registrarEmpleado");
 			}
 			else {
