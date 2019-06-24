@@ -83,6 +83,7 @@ public class empleadoController {
 			return mav;
 	}
 	
+	
 	@RequestMapping(value="/updateDataEmpleado",method=RequestMethod.POST)
 	public ModelAndView update(@Valid @ModelAttribute Empleado empleado, BindingResult result, @RequestParam("codigoEmpleado") Integer codigoEmpleado , @RequestParam("codigoSucursal") Integer codigo){
 			ModelAndView mav = new ModelAndView();
